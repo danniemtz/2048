@@ -1,5 +1,7 @@
 # 2048
 The 2048 game as played on the web
+Language/Tool ver. : Python 3.13
+No dependencies needed to install
 
 
 **How to play**
