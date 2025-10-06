@@ -25,8 +25,7 @@ Q	Quit the Game
 
 
 **How to Run**
-Type in terminal:
-  python3 game.py 
+- Type in terminal:  python3 game.py 
 
 
 **Challenges**
