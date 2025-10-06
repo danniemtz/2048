@@ -25,10 +25,13 @@ Q	Quit the Game
 
 
 **How to Run**
-- Type in terminal:  python3 game.py 
+- Type in terminal:  python3 game.py
+- To run test seed file (no need for seeding the file, it does it inside), just type in terminal: python3 test_seed.py
 
 
 **Challenges**
 - Designing deterministic tests to verify game consistency
 - Handling user input and console-based UI updates in a loop
 - Creating a stagnant board to show up on the terminal (os), wont have to display a new board with every move
+
+
