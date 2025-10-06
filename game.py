@@ -14,6 +14,8 @@ import random
 import os as _os
 
 boardSize = 4
+score = 0  # will now implement the score (this will be the global variable)
+
 
 
 # display function
@@ -21,6 +23,7 @@ boardSize = 4
 def display(board):
     # clear screen each turn then print the whole board once
     _os.system('cls' if _os.name == 'nt' else 'clear')
+    print(f"Score: {score}\n")
     print("+------+------+------+------+\n"
           f"|{cell(board[0][0])}|{cell(board[0][1])}|{cell(board[0][2])}|{cell(board[0][3])}|\n"
           "+------+------+------+------+\n"
@@ -53,6 +56,8 @@ def cell(v):
 
 # 2. Functions to merge left, right, up, down
 def mergeOneRowLeft(row):
+    # incorporating the global score only to this bc every other merge function uses this one
+    global score
     # move every element in the row as far left as possible
     # the in range(start, stop, step) so we start at the very end of the row, stop at the
     # first index, and going back each time
@@ -67,6 +72,7 @@ def mergeOneRowLeft(row):
         # check if the current value is equal to the one on its right
         if row[i] == row[i + 1]:
             row[i] *= 2
+            score += row[i]  # adding the merged value to the score
             row[i+1] = 0
     # now merge again to move everything left
     for i in range(boardSize-1, 0, -1):
@@ -252,7 +258,10 @@ def main():
                     # find out if the user has lost or nah
                     if noMoves(board):
                         print("There are no more moves you can make...You LOST!")
-                        gameOver = True
+                        play_again = input("Play again? (Y/N): ").lower()
+                        if play_again != "y":
+                            print("Thanks for playing!")
+                            gameOver = True
 
 
 if __name__ == "__main__":
