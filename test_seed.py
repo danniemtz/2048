@@ -115,7 +115,7 @@ def run_all_tests():
     print("Core deterministic tests passed.\n")
 
     print("Running random legality + determinism simulation...")
-    simulate_sequence(seed=42, moves=100)
+    simulate_sequence(seed=24, moves=100)
     simulate_sequence(seed=99, moves=150)
     print("Random legality & determinism tests passed.\n")
 
